@@ -1,3 +1,4 @@
+import About from '@/components/about'
 import Hero from '@/components/hero'
 import SectionDivider from '@/components/section-divider'
 import Image from 'next/image'
@@ -8,6 +9,7 @@ export default function Home() {
       <main className="flex flex-col items-center px-4">
         <Hero />
         <SectionDivider />
+        <About />
       </main>
       <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
         <a
