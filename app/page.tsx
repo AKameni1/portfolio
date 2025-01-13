@@ -1,9 +1,13 @@
+import Hero from '@/components/hero'
 import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
-      <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start"></main>
+    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] gap-16 pt-28 pb-20 font-[family-name:var(--font-geist-sans)] sm:pt-36">
+      <main className="flex flex-col items-center px-4">
+        <Hero />
+
+      </main>
       <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
