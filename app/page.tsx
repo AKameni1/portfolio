@@ -1,12 +1,13 @@
 import Hero from '@/components/hero'
+import SectionDivider from '@/components/section-divider'
 import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] gap-16 pt-28 pb-20 font-[family-name:var(--font-geist-sans)] sm:pt-36">
+    <div className="min-h-screen pt-28 pb-20 font-[family-name:var(--font-geist-sans)] sm:pt-36">
       <main className="flex flex-col items-center px-4">
         <Hero />
-
+        <SectionDivider />
       </main>
       <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
         <a
