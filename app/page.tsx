@@ -1,5 +1,6 @@
 import About from '@/components/about'
 import Hero from '@/components/hero'
+import Projects from '@/components/projects'
 import SectionDivider from '@/components/section-divider'
 import Image from 'next/image'
 
@@ -10,6 +11,7 @@ export default function Home() {
         <Hero />
         <SectionDivider />
         <About />
+        <Projects />
       </main>
       <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
         <a
