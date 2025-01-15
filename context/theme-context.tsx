@@ -1,8 +1,14 @@
-"use client"
+'use client'
 
-import React, { createContext, useCallback, useEffect, useMemo, useState } from 'react'
+import React, {
+  createContext,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 
-type Theme = "light" | "dark"
+type Theme = 'light' | 'dark'
 
 type ThemeContextProviderProps = {
   children: React.ReactNode
@@ -18,42 +24,37 @@ const ThemeContext = createContext<ThemeContextType | null>(null)
 export default function ThemeContextProvider({
   children,
 }: Readonly<ThemeContextProviderProps>) {
-  const [theme, setTheme] = useState<Theme>("light")
-  
+  const [theme, setTheme] = useState<Theme>('light')
+
   const toggleTheme = useCallback(() => {
-    if (theme === "light") {
-      setTheme("dark")
-      window.localStorage.setItem("theme", "dark")
-      document.documentElement.classList.add("dark")
+    if (theme === 'light') {
+      setTheme('dark')
+      window.localStorage.setItem('theme', 'dark')
+      document.documentElement.classList.add('dark')
     } else {
-      setTheme("light")
-      window.localStorage.setItem("theme", "light")
-      document.documentElement.classList.remove("dark")
+      setTheme('light')
+      window.localStorage.setItem('theme', 'light')
+      document.documentElement.classList.remove('dark')
     }
   }, [theme])
 
   useEffect(() => {
-    const localTheme = window.localStorage.getItem("theme") as Theme | null
+    const localTheme = window.localStorage.getItem('theme') as Theme | null
     if (localTheme) {
       setTheme(localTheme)
-      if (localTheme === "dark") {
-        document.documentElement.classList.add("dark")
+      if (localTheme === 'dark') {
+        document.documentElement.classList.add('dark')
       }
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme("dark")
-      document.documentElement.classList.add("dark")
+      setTheme('dark')
+      document.documentElement.classList.add('dark')
     }
   }, [])
 
-  const value = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme]);
+  const value = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme])
 
-  return (
-    <ThemeContext.Provider value={value}>
-      {children}
-    </ThemeContext.Provider>
-  )
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }
-
 
 export function useTheme() {
   const context = React.useContext(ThemeContext)

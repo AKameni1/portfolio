@@ -8,7 +8,7 @@ import Skills from '@/components/skills'
 
 export default function Home() {
   return (
-    <div className="min-h-screen pt-28 pb-20 font-[family-name:var(--font-geist-sans)] sm:pt-36">
+    <div className="min-h-screen pb-20 pt-28 font-[family-name:var(--font-geist-sans)] sm:pt-36">
       <main className="flex flex-col items-center px-4">
         <Hero />
         <SectionDivider />
