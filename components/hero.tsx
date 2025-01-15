@@ -1,5 +1,6 @@
 "use client"
 
+import { useActiveSectionContext } from '@/context/active-section-context'
 import { useSectionInView } from '@/lib/hooks'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -10,6 +11,7 @@ import { FaGithub } from 'react-icons/fa'
 import { HiDownload } from 'react-icons/hi'
 
 export default function Hero() {
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext()
   const { ref } = useSectionInView('Home')
 
   return (
@@ -34,19 +36,22 @@ export default function Hero() {
       </motion.h1>
 
       <motion.div className='flex flex-col sm:flex-row items-center justify-center gap-4 px-4 text-lg font-medium' initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", stiffness: 125, delay: 0.3, duration: 0.7 }}>
-        <Link href="#contact" className='group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition-all'>Contact me here
+        <Link href="#contact" className='group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition-all' onClick={() => {
+          setActiveSection('Contact')
+          setTimeOfLastClick(Date.now())
+        }}>Contact me here
           <BsArrowRight className='ml-[1/2] opacity-70 group-hover:translate-x-1 transition-all' />
         </Link>
 
-        <a href="CV.pdf" download className='group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition-all border border-black/10'>Download CV
+        <a href="CV.pdf" download className='group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition-all borderBlack'>Download CV
           <HiDownload className='ml-[1/2] opacity-60 group-hover:translate-y-1 transition-all' aria-hidden />
         </a>
 
-        <a href="https://www.linkedin.com/in/arthur-kameni-0a8ba4291/" target='_blank' className='bg-white p-4 text-gray-700 flex items-center text-[1.25rem] gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition-all border border-black/10'>
+        <a href="https://www.linkedin.com/in/arthur-kameni-0a8ba4291/" target='_blank' className='bg-white p-4 text-gray-700 flex items-center text-[1.25rem] gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition-all borderBlack'>
           <BsLinkedin aria-hidden />
         </a>
 
-        <a href="https://github.com/AKameni1" target='_blank' className='bg-white p-4 text-gray-700 flex items-center text-[1.25rem] gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition-all border border-black/10'>
+        <a href="https://github.com/AKameni1" target='_blank' className='bg-white p-4 text-gray-700 flex items-center text-[1.25rem] gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition-all borderBlack'>
           <FaGithub aria-hidden />
         </a>
       </motion.div>
