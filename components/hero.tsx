@@ -43,15 +43,15 @@ export default function Hero() {
           <BsArrowRight className='ml-[1/2] opacity-70 group-hover:translate-x-1 transition-all' />
         </Link>
 
-        <a href="CV.pdf" download className='group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition-all borderBlack'>Download CV
+        <a href="CV.pdf" download className='group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition-all borderBlack dark:bg-white/10'>Download CV
           <HiDownload className='ml-[1/2] opacity-60 group-hover:translate-y-1 transition-all' aria-hidden />
         </a>
 
-        <a href="https://www.linkedin.com/in/arthur-kameni-0a8ba4291/" target='_blank' className='bg-white p-4 text-gray-700 flex items-center text-[1.25rem] gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition-all borderBlack'>
+        <a href="https://www.linkedin.com/in/arthur-kameni-0a8ba4291/" target='_blank' className='bg-white p-4 text-gray-700 flex items-center text-[1.25rem] gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition-all borderBlack dark:bg-white/10 dark:text-white/60 dark:hover:text-gray-200'>
           <BsLinkedin aria-hidden />
         </a>
 
-        <a href="https://github.com/AKameni1" target='_blank' className='bg-white p-4 text-gray-700 flex items-center text-[1.25rem] gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition-all borderBlack'>
+        <a href="https://github.com/AKameni1" target='_blank' className='bg-white p-4 text-gray-700 flex items-center text-[1.25rem] gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition-all borderBlack dark:bg-white/10 dark:text-white/60 dark:hover:text-gray-200'>
           <FaGithub aria-hidden />
         </a>
       </motion.div>
